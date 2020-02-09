@@ -8,10 +8,10 @@ linux-packages: Linux-packages
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.linux-packages](https://galaxy.ansible.com/devops-toolbox.linux-packages)
+[https://galaxy.ansible.com/devopstoolbox.linux-packages](https://galaxy.ansible.com/devopstoolbox.linux-packages)
 
 ```bash
-ansible-galaxy install devops-toolbox.linux-packages
+ansible-galaxy install devopstoolbox.linux-packages
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: linux-packages is configured
       import_role:
-        name: devops-toolbox.linux-packages
+        name: devopstoolbox.linux-packages
       vars:
         linux-packages_packages_state: present
         linux-packages_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
