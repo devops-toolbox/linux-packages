@@ -1,0 +1,10 @@
+---
+# Template configuration files for linux-packages
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ linux-packages_templates_copy }}"
+  when: linux-packages_copy_templates

@@ -1,0 +1,13 @@
+---
+# Template configuration files for linux-packages
+
+- name: Set SELinux booleans
+  seboolean:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+    persistent: "{{ item.persistent | default('false') }}"
+  loop: "{{ linux-packages_selinux_booleans }}"
+  when:
+    - ansible_selinux.status == "enabled"
+    - linux-packages_enable_selinux
+  become: true

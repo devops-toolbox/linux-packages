@@ -1,0 +1,27 @@
+---
+# Install linux-packages packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ linux-packages_packages_remove }}"
+    state: absent
+  become: true
+  when: linux-packages_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ linux-packages_packages_repos }}"
+    state: "{{ linux-packages_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ linux-packages_packages_prereq }}"
+    state: "{{ linux-packages_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ linux-packages_packages_install }}"
+    state: "{{ linux-packages_packages_state }}"
+  become: true
